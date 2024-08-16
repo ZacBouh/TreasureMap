@@ -1,5 +1,28 @@
+import HeaderTitle from "@/components/HeaderTitle";
+import TotalBalanceCard from "@/components/TotalBalanceCard";
+
 const Home = () => {
-  return <div>Home</div>;
+  const loggedIn = { firstName: "Zac" };
+
+  return (
+    <section className="home">
+      <div className="home-content">
+        <header className="home-header">
+          <HeaderTitle
+            type="greeting"
+            title="Bienvenue"
+            user={loggedIn?.firstName || "invité"}
+            subtitle="Accédez à vos comptes et transactions"
+          />
+          <TotalBalanceCard
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={1200.3}
+          />
+        </header>
+      </div>
+    </section>
+  );
 };
 
 export default Home;
