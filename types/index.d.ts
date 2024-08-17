@@ -17,3 +17,13 @@ declare interface TotalBalanceCardProps {
   totalBanks: number;
   totalCurrentBalance: number;
 }
+
+declare interface SiderbarProps {
+  user: User;
+}
+
+declare interface SidebarLinkProps {
+  href: string;
+  icon: string;
+  title: string;
+}
