@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
@@ -24,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
+      <body
+        className={`${inter.variable} ${ibmPlexSerif.variable} ${manrope.variable}`}
+      >
         {children}
       </body>
     </html>

@@ -1,4 +1,5 @@
 import HeaderTitle from "@/components/HeaderTitle";
+import RightSideBar from "@/components/RightSideBar";
 import TotalBalanceCard from "@/components/TotalBalanceCard";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
 
   return (
     <section className="home">
-      <div className="home-content">
+      <div className="home-content ">
         <header className="home-header">
           <HeaderTitle
             type="greeting"
@@ -21,6 +22,7 @@ const Home = () => {
           />
         </header>
       </div>
+      <RightSideBar />
     </section>
   );
 };
