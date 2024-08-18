@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CreditCard from "../CreditCard";
+import BudgetCard from "../BudgetCard";
 
 const RightSideBar = ({ user }: RightSidebarProps) => {
   return (
@@ -12,7 +13,7 @@ const RightSideBar = ({ user }: RightSidebarProps) => {
         </div>
         <h1 className="font-inter font-semibold text-2xl">Zacharie Bouhaya</h1>
       </header>
-      <section className="mt-[32px]">
+      <section className="mt-[32px]" id="right-side-my-banks">
         <header className="flex justify-between items-center">
           <h1 className="font-semibold text-lg">Mes Banques</h1>
           <Link href={"/"} className="flex gap-[4px] text-sm font-semibold">
@@ -25,7 +26,28 @@ const RightSideBar = ({ user }: RightSidebarProps) => {
             Ajouter
           </Link>
         </header>
-        <CreditCard />
+        <div className="relative mt-6">
+          <div>
+            <CreditCard />
+          </div>
+          <div className="absolute top-8 left-7 -z-10 ">
+            <CreditCard type={2} />
+          </div>
+        </div>
+      </section>
+      <section className="mt-16 flex flex-col gap-6 ">
+        <header className="flex justify-between items-center">
+          <h1 className="font-semibold text-lg">Mes Budgets</h1>
+          <Link href={"/"} className="flex gap-[4px] text-sm font-semibold">
+            <Image
+              src={"/icons/dots-vertical.svg"}
+              alt="ajouter une banque"
+              width={25}
+              height={25}
+            />
+          </Link>
+        </header>
+        <BudgetCard />
       </section>
     </section>
   );
