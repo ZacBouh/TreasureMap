@@ -47,7 +47,7 @@ const RightSideBar = ({ user }: RightSidebarProps) => {
             />
           </Link>
         </header>
-        <BudgetCard />
+        <BudgetCard balance={30} total={140} />
       </section>
     </section>
   );
