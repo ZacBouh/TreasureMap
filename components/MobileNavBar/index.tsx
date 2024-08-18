@@ -15,7 +15,7 @@ import MobileNavBarLink from "./MobileNavBarLink";
 const MobileNavBar = () => {
   const loggedIn = { firstName: "Zac", LastName: "Bouhaya" };
   return (
-    <nav className=" flex justify-between shadow-xl py-[16px] px-[12px] ">
+    <nav className=" flex justify-between shadow-xl py-[16px] px-[12px] md:hidden ">
       <Link href={"/"} className=" gap-2 flex ">
         <Image
           src={"/icons/logo.svg"}
@@ -28,11 +28,22 @@ const MobileNavBar = () => {
         </h1>
       </Link>
       <Sheet>
-        <SheetTrigger>Menu</SheetTrigger>
+        <SheetTrigger className="mr-2">
+          <Image
+            src={"/icons/hamburger.svg"}
+            width={34}
+            height={34}
+            alt={"Menu"}
+          />
+        </SheetTrigger>
         <SheetContent className="bg-slate-50">
-          <div className="flex flex-col gap-4 w-full pt-[50px]">
+          <SheetTitle className="invisible">Menu</SheetTitle>
+          <SheetDescription className="invisible">Menu</SheetDescription>
+          <div className="flex flex-col gap-4 w-full pt-[5px]">
             {sidebarLinks.map((link) => (
-              <MobileNavBarLink {...link} />
+              <SheetClose asChild key={link.title}>
+                <MobileNavBarLink {...link} />
+              </SheetClose>
             ))}
           </div>
         </SheetContent>

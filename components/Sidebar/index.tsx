@@ -18,7 +18,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             height={34}
             alt={"TreasureChart Logo"}
           />
-          <h1 className="2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 hover:text-white max-xl:hidden">
+          <h1 className="2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1  max-xl:hidden">
             Treasure&#8203;Map
           </h1>
         </Link>

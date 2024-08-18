@@ -5,12 +5,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-const MobileNavBarLink = ({ href, icon, title }: SidebarLinkProps) => {
+const MobileNavBarLink = ({
+  href,
+  icon,
+  title,
+  ...props
+}: SidebarLinkProps) => {
   const pathName = usePathname();
   return (
     <Button
       asChild
-      className="flex justify-start hover:brightness-0 w-full h-full py-[16px] px-[12px]"
+      className={cn("flex justify-start w-full h-full py-[16px] px-[12px]", {
+        "hover:brightness-0 ": !(pathName === href),
+      })}
+      {...props}
     >
       <Link
         href={href}

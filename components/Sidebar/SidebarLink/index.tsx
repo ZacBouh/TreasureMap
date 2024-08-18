@@ -10,7 +10,9 @@ const SidebarLink = ({ href, icon, title }: SidebarLinkProps) => {
   return (
     <Button
       asChild
-      className="flex justify-start hover:brightness-0 w-full h-full py-[16px] px-[12px]"
+      className={cn("flex justify-start w-full h-full py-[16px] px-[12px]", {
+        "hover:brightness-0 ": !(pathName === href),
+      })}
     >
       <Link
         href={href}
